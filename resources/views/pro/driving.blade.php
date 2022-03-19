@@ -112,11 +112,11 @@
                                                        <td></td>
 													   
                                                   <td><a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                                data-id="{{ $x->id }}" data-driv_no="{{$x->driv_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}" 
-												data-adress="{{$x->adress}}" data-blood_type="{{$x->blood_type}}" data-ns_no="{{$x->ns_no}}" data-phone="{{$x->phone}}"
-												 data-gender="{{$x->gender}}" data-date_begin="{{$x->date_begin}}" data-date_end="{{$x->date_end}}"
-                                                data-job="{{$x->job}}"  data-personal_state="{{$x->personal_state}}" data-toggle="modal" 
-                                                href="#exampleModal2" title="تعديل"><i class="las la-pen"></i></a>
+                                                    data-id="{{ $x->id }}" data-driv_no="{{$x->driv_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}" 
+                                                    data-adress="{{$x->adress}}" data-blood_type="{{$x->blood_type}}" data-ns_no="{{$x->ns_no}}" data-phone="{{$x->phone}}"
+                                                     data-gender="{{$x->gender}}" data-date_begin="{{$x->date_begin}}" data-date_end="{{$x->date_end}}"
+                                                    data-job="{{$x->job}}"  data-personal_state="{{$x->personal_state}}" data-toggle="modal" 
+                                                    href="#exampleModal2" title="تعديل"><i class="las la-pen"></i></a>
 											
 												<a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
                                                 data-id="{{ $x->id }}" data-name="{{$x->name}}"
@@ -143,7 +143,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title">اضافة مواطن</h6><button aria-label="Close" class="close" data-dismiss="modal"
+                    <h6 class="modal-title">اضافة رخصه</h6><button aria-label="Close" class="close" data-dismiss="modal"
                         type="button"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -223,7 +223,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">تعديل القسم</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">تعديل الرخصة</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

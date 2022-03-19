@@ -27,7 +27,7 @@ Route::get('/data', 'Website\WebsiteController@data')->name('website.data');
 
 
 Route::resource('cardPer', 'InvoController');
-Route::resource('driving', 'DrivLicensController');
+Route::resource('driving', 'DrivLicenseController');
 Route::resource('passport', 'PassportsController');
 Route::resource('serch', 'SerchController');
 

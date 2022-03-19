@@ -14,6 +14,7 @@ class DrivLicenseController extends Controller
      */
     public function index()
     {
+       
         $driving =driv_licens::all();
         return view('pro.driving' , compact('driving'));
     }
@@ -37,7 +38,7 @@ class DrivLicenseController extends Controller
     public function store(Request $request)
     {
 
-        
+
 
         driv_licens::create([
                 'driv_no' => $request->driv_no,
@@ -89,10 +90,13 @@ class DrivLicenseController extends Controller
      */
     public function update(Request $request)
     {
-       
+        dd($request->all());
+        
         $id = $request->id;
+        
 
         $driv_licens = driv_licens::find($id);
+
         $driv_licens->update([
        
                 'driv_no' => $request->driv_no,

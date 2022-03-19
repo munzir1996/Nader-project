@@ -14,6 +14,7 @@ class DrivLicensController extends Controller
      */
     public function index()
     {
+        dd('hi');
         $driving =driv_licens::all();
         return view('pro.driving' , compact('driving'));
     }
