@@ -22,10 +22,11 @@ class CreatePassportsTable extends Migration
             $table->string('blood_type');
             $table->integer('ns_no');// الرقم الوطني
             $table->integer('phone');
+            $table->string('gender');
             $table->date('date_begin');
             $table->date('date_end');
             $table->string('job');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->string('personal_state');
             $table->softDeletes();
             $table->timestamps();

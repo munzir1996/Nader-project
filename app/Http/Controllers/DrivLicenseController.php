@@ -37,6 +37,8 @@ class DrivLicenseController extends Controller
     public function store(Request $request)
     {
 
+        
+
         driv_licens::create([
                 'driv_no' => $request->driv_no,
                 'name' => $request->name,
@@ -50,12 +52,10 @@ class DrivLicenseController extends Controller
                 'date_end' => $request->date_end,
                 'job' => $request->job,
                 'personal_state' => $request->personal_state,
-                
-                
 
             ]);
-            session()->flash('Add', 'تم اضافة القسم بنجاح ');
-            return redirect('/driving');
+            session()->flash('Add', 'تم اضافة الرخصه بنجاح ');
+            return back();
     }
 
     /**
@@ -110,7 +110,7 @@ class DrivLicenseController extends Controller
                 
         ]);
 
-        session()->flash('edit','تم تعديل القسم بنجاج');
+        session()->flash('edit','تم تعديل الرخصه بنجاج');
         return redirect('/driving');
     }
 
@@ -124,7 +124,7 @@ class DrivLicenseController extends Controller
     {
         $id = $request->id;
         driv_licens::find($id)->delete();
-        session()->flash('delete','تم حذف القسم بنجاح');
+        session()->flash('delete','تم حذف الرخصه بنجاح');
         return redirect('/driving');
        
         

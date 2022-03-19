@@ -25,7 +25,8 @@ class CreateDrivLicensTable extends Migration
             $table->date('date_begin');
             $table->date('date_end');
             $table->string('job');
-            $table->string('photo');
+            $table->string('gender');
+            $table->string('photo')->nullable();
             $table->string('personal_state');
             $table->softDeletes();
             $table->timestamps();

@@ -152,7 +152,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">card_no </label>
-                            <input type="text" class="form-control" id="card_no" name="card_no">
+                            <input type="number" class="form-control" id="card_no" name="card_no">
                         </div>
 
 						<div class="form-group">
@@ -162,7 +162,7 @@
 
 						<div class="form-group">
                             <label for="exampleInputEmail1"> birthday</label>
-                            <input type="num" class="form-control" id="birthday" name="birthday">
+                            <input type="date" class="form-control" id="birthday" name="birthday">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> adress</label>
@@ -174,11 +174,11 @@
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> ns_no</label>
-                            <input type="text" class="form-control" id="ns_no" name="ns_no">
+                            <input type="number" class="form-control" id="ns_no" name="ns_no">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone">
+                            <input type="number" class="form-control" id="phone" name="phone">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1">gender </label>
@@ -186,11 +186,11 @@
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> date_begin</label>
-                            <input type="data" class="form-control" id="date_begin" name="date_begin">
+                            <input type="date" class="form-control" id="date_begin" name="date_begin">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> date_end</label>
-                            <input type="data" class="form-control" id="date_end" name="date_end">
+                            <input type="date" class="form-control" id="date_end" name="date_end">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> job</label>

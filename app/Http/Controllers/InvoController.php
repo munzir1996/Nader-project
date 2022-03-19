@@ -108,7 +108,7 @@ class InvoController extends Controller
             'personal_state' => $request->personal_state,
         ]);
 
-        session()->flash('edit', 'تم تعديل القسم بنجاج');
+        session()->flash('edit', 'تم تعديل البطاقه بنجاج');
         
         return redirect('/cardPer');
     }
@@ -123,7 +123,7 @@ class InvoController extends Controller
     {
         $id = $request->id;
         invo::find($id)->delete();
-        session()->flash('delete', 'تم حذف القسم بنجاح');
+        session()->flash('delete', 'تم حذف البطاقه بنجاح');
         return redirect('/cardPer');
     }
 }

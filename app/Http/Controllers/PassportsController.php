@@ -14,8 +14,8 @@ class PassportsController extends Controller
      */
     public function index()
     {
-        $passport =passport::all();
-        return view('pro.passport' , compact('passport'));
+        $passport = passport::all();
+        return view('pro.passport', compact('passport'));
     }
 
     /**
@@ -36,46 +36,40 @@ class PassportsController extends Controller
      */
     public function store(Request $request)
     {
-        // $validatedData = $request->validate([
-        //     'passport_no' => 'required|unique:passport_no|max:255',
-        //     'name' => 'required|unique:name|max:255',
-        //     'birthday' => 'required|unique:birthday|max:255',
-        //     'adress' => 'required|unique:adress|max:255',
-        //     'blood_type' => 'required|unique:blood_type|max:255',
-        //     'ns_no' => 'required|unique:ns_no|max:255',
-        //     'phone' => 'required|unique:phone|max:255',
-        //     'gender' => 'required|unique:gender|max:255',
-        //     'date_begin' => 'required|unique:date_begin|max:255',
-        //     'date_end' => 'required|unique:date_end|max:255',
-        //     'job' => 'required|unique:job|max:255',
-        //     'personal_state' => 'required|unique:personal_state|max:255',
-        // ],[
+        $validatedData = $request->validate([
+            'passport_no' => 'required',
+            'name' => 'required',
+            'birthday' => 'required',
+            'adress' => 'required',
+            'blood_type' => 'required',
+            'ns_no' => 'required',
+            'phone' => 'required',
+            'gender' => 'required',
+            'date_begin' => 'required',
+            'date_end' => 'required',
+            'job' => 'required',
+            'personal_state' => 'required',
+        ]);
 
-        //     'date_begin.required' =>'يرجي ادخال اسم القسم',
-        //     'date_end.unique' =>'اسم القسم مسجل مسبقا',
-        //     'birthday.unique' =>'اسم القسم مسجل مسبقا',
+        passport::create([
+            'passport_no' => $request->passport_no,
+            'name' => $request->name,
+            'birthday' => $request->birthday,
+            'adress' => $request->adress,
+            'blood_type' => $request->blood_type,
+            'ns_no' => $request->ns_no,
+            'phone' => $request->phone,
+            'gender' => $request->gender,
+            'date_begin' => $request->date_begin,
+            'date_end' => $request->date_end,
+            'job' => $request->job,
+            'personal_state' => $request->personal_state,
 
-        // ]);
 
-             passport::create([
-                'passport_no' => $request->passport_no,
-                'name' => $request->name,
-                'birthday' => $request->birthday,
-                'adress' => $request->adress,
-                'blood_type' => $request->blood_type,
-                'ns_no' => $request->ns_no,
-                'phone' => $request->phone,
-                'gender' => $request->gender,
-                'date_begin' => $request->date_begin,
-                'date_end' => $request->date_end,
-                'job' => $request->job,
-                'personal_state' => $request->personal_state,
-                
-                
 
-            ]);
-            session()->flash('Add', 'تم اضافة القسم بنجاح ');
-            return redirect('/passport');
+        ]);
+        session()->flash('Add', 'تم اضافة القسم بنجاح ');
+        return back();
     }
 
     /**
@@ -109,32 +103,32 @@ class PassportsController extends Controller
      */
     public function update(Request $request)
     {
-       
-     
-       
+
+
+
         $id = $request->id;
 
-      
+
         $passport = passport::find($id);
         $passport->update([
-       
-                'passport_no' => $request->passport_no,
-                'name' => $request->name,
-                'birthday' => $request->birthday,
-                'adress' => $request->adress,
-                'blood_type' => $request->blood_type,
-                'ns_no' => $request->ns_no,
-                'phone' => $request->phone,
-                'gender' => $request->gender,
-                'date_begin' => $request->date_begin,
-                'date_end' => $request->date_end,
-                'job' => $request->job,
-                'personal_state' => $request->personal_state,
-                
+
+            'passport_no' => $request->passport_no,
+            'name' => $request->name,
+            'birthday' => $request->birthday,
+            'adress' => $request->adress,
+            'blood_type' => $request->blood_type,
+            'ns_no' => $request->ns_no,
+            'phone' => $request->phone,
+            'gender' => $request->gender,
+            'date_begin' => $request->date_begin,
+            'date_end' => $request->date_end,
+            'job' => $request->job,
+            'personal_state' => $request->personal_state,
+
         ]);
 
-        session()->flash('edit','تم تعديل القسم بنجاج');
-        return redirect('/passport');
+        session()->flash('edit', 'تم تعديل  الجواز بنجاج');
+        return  back();
     }
 
     /**
@@ -147,10 +141,7 @@ class PassportsController extends Controller
     {
         $id = $request->id;
         passport::find($id)->delete();
-        session()->flash('delete','تم حذف القسم بنجاح');
-        return redirect('/passport');
-       
-        
-        
+        session()->flash('delete', 'تم حذف الجواز بنجاح');
+        return back();
     }
 }
