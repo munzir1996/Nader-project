@@ -14,8 +14,8 @@ class InvoController extends Controller
      */
     public function index()
     {
-        $cardPer =invo::all();
-        return view('pro.cardper' , compact('cardPer'));
+        $cardPer = invo::all();
+        return view('pro.cardPer', compact('cardPer'));
     }
 
     /**
@@ -36,7 +36,25 @@ class InvoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        invo::create([
+            'card_no' => $request->card_no,
+            'name' => $request->name,
+            'birthday' => $request->birthday,
+            'adress' => $request->adress,
+            'blood_type' => $request->blood_type,
+            'ns_no' => $request->ns_no,
+            'phone' => $request->phone,
+            'gender' => $request->gender,
+            'date_begin' => $request->date_begin,
+            'date_end' => $request->date_end,
+            'job' => $request->job,
+            'personal_state' => $request->personal_state,
+        ]);
+
+        session()->flash('Add', 'تم اضافة القسم بنجاح ');
+
+        return back();
     }
 
     /**
@@ -68,9 +86,31 @@ class InvoController extends Controller
      * @param  \App\invo  $invo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, invo $invo)
+    public function update(Request $request)
     {
-        //
+
+        $id = $request->id;
+
+        $invo = invo::find($id);
+
+        $invo->update([
+            'card_no' => $request->card_no,
+            'name' => $request->name,
+            'birthday' => $request->birthday,
+            'adress' => $request->adress,
+            'blood_type' => $request->blood_type,
+            'ns_no' => $request->ns_no,
+            'phone' => $request->phone,
+            'gender' => $request->gender,
+            'date_begin' => $request->date_begin,
+            'date_end' => $request->date_end,
+            'job' => $request->job,
+            'personal_state' => $request->personal_state,
+        ]);
+
+        session()->flash('edit', 'تم تعديل القسم بنجاج');
+        
+        return redirect('/cardPer');
     }
 
     /**
@@ -79,8 +119,11 @@ class InvoController extends Controller
      * @param  \App\invo  $invo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(invo $invo)
+    public function destroy(Request $request)
     {
-        //
+        $id = $request->id;
+        invo::find($id)->delete();
+        session()->flash('delete', 'تم حذف القسم بنجاح');
+        return redirect('/cardPer');
     }
 }

@@ -94,7 +94,8 @@
 									<div class="d-flex">
 										<div class="">
 											<h4 class="tx-20 font-weight-bold mb-1 text-white">
-											{{\App\driv_licens::count()}}
+											{{-- {{\App\driv_licens::count()}} --}}
+											15
 											</h4>
 											<p class="mb-0 tx-12 text-white op-7">Compared to last week</p>
 										</div>

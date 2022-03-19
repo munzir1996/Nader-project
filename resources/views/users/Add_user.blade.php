@@ -56,9 +56,14 @@
 
                         <div class="row mg-b-20">
                             <div class="parsley-input col-md-6" id="fnWrapper">
-                                <label>اسم المستخدم: <span class="tx-danger">*</span></label>
+                                <label> الإسم الأول: <span class="tx-danger">*</span></label>
                                 <input class="form-control form-control-sm mg-b-20"
-                                    data-parsley-class-handler="#lnWrapper" name="name" required="" type="text">
+                                    data-parsley-class-handler="#lnWrapper" name="first_name" required="" type="text">
+                            </div>
+                            <div class="parsley-input col-md-6" id="fnWrapper">
+                                <label>الإسم الإخير : <span class="tx-danger">*</span></label>
+                                <input class="form-control form-control-sm mg-b-20"
+                                    data-parsley-class-handler="#lnWrapper" name="last_name" required="" type="text">
                             </div>
 
                             <div class="parsley-input col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
