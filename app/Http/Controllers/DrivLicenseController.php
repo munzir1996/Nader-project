@@ -90,12 +90,11 @@ class DrivLicenseController extends Controller
      */
     public function update(Request $request)
     {
-        dd($request->all());
-        
-        $id = $request->id;
+       
+        $id = $request->driv_no;
         
 
-        $driv_licens = driv_licens::find($id);
+        $driv_licens = driv_licens::where('driv_no',$id)->first();
 
         $driv_licens->update([
        
