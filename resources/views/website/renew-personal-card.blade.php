@@ -27,12 +27,16 @@
 <section class="main">
     <div class="wrap">
         <h3>تجديد البطاقة القومية</h3>
-        <div class="search">
-            <input type="text" class="searchTerm" placeholder="أدخل رقم البطاقة">
-            <a href="{{route('website.data')}}" class="searchButton "></a>
-            <i class="fa fa-search "></i>
-            </abutton>
-        </div>
+        <form action="{{route('website.renew-personal-card.search')}}" method="post">
+            <div class="search">
+                @csrf
+                <input type="text" class="searchTerm" name="card_no" placeholder="أدخل رقم البطاقة" required>
+                <button class="searchButton">
+
+                </button>
+                <i class="fa fa-search "></i>
+            </div>
+        </form>
     </div>
 </section>
 

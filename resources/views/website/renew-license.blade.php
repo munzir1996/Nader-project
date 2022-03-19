@@ -27,12 +27,17 @@
 <section class="main">
     <div class="wrap">
         <h3>تجديد رخصة القيادة</h3>
-        <div class="search">
-            <input type="text" class="searchTerm" placeholder="أدخل رقم الرخصة">
-            <button type="submit" class="searchButton">
-                 <i class="fa fa-search"></i>
-              </button>
-        </div>
+        <form action="{{route('website.renew-license.search')}}" method="post">
+            @csrf
+            <div class="search">
+                @csrf
+                <input type="text" class="searchTerm" name="driv_no" placeholder="أدخل رقم رخصة القيادة" required>
+                <button class="searchButton">
+
+                </button>
+                <i class="fa fa-search "></i>
+            </div>
+        </form>
     </div>
 </section>
 

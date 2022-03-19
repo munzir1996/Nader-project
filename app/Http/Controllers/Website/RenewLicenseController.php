@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Http\Controllers\Website;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\driv_licens;
+use Illuminate\Support\Facades\Session;
+
+class RenewLicenseController extends Controller
+{
+    public function search(Request $request)
+    {
+        $driv_licens = driv_licens::where('driv_no', $request->driv_no)->first();
+        if (empty($driv_licens)) {
+            return view('website.error-data');
+        }
+
+        return view('website.renew-license-data', [
+            'driv_licens' => $driv_licens
+        ]);
+    }
+
+    public function update(Request $request, driv_licens $driv_licens)
+    {
+        $driv_licens->update([
+            'adress' => $request->adress,
+            'phone' => $request->phone,
+            'job' => $request->job,
+            'personal_state' => $request->personal_state,
+        ]);
+        session()->flash('success', 'تم التعديل بنجاح');
+        return view('website.renew-license-data', [
+            'driv_licens' => $driv_licens
+        ]);
+    }
+}

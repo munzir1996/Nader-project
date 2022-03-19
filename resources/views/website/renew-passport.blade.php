@@ -27,12 +27,18 @@
 <section class="main">
     <div class="wrap">
         <h3>تجديد جواز السفر</h3>
-        <div class="search">
-            <input type="text" class="searchTerm" placeholder="أدخل رقم الجواز">
-            <button type="submit" class="searchButton">
-                 <i class="fa fa-search"></i>
-              </button>
-        </div>
+
+        <form action="{{route('website.renew-passport.search')}}" method="post">
+            @csrf
+            <div class="search">
+                @csrf
+                <input type="text" class="searchTerm" name="passport_no" placeholder="أدخل رقم الجواز" required>
+                <button class="searchButton">
+
+                </button>
+                <i class="fa fa-search "></i>
+            </div>
+        </form>
     </div>
 </section>
 

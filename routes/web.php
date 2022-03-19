@@ -17,11 +17,26 @@ Route::get('/', 'Website\WebsiteController@index')->name('website.index');
 Route::get('/personal-card', 'Website\WebsiteController@personalCard')->name('website.personal-card');
 Route::get('/driving-license', 'Website\WebsiteController@drivingLicense')->name('website.driving-license');
 Route::get('/pass', 'Website\WebsiteController@passport')->name('website.pass');
+
+// Renew License
 Route::get('/renew-license', 'Website\WebsiteController@renewLicense')->name('website.renew-license');
+Route::post('/renew-license/edit/{driv_licens}', 'Website\RenewLicenseController@update')->name('website.renew-license.update');
+Route::post('/renew-license', 'Website\RenewLicenseController@search')->name('website.renew-license.search');
+
 Route::get('/lost-license', 'Website\WebsiteController@lostLicense')->name('website.lost-license');
+
+// Renew Passport
 Route::get('/renew-passport', 'Website\WebsiteController@renewPassport')->name('website.renew-passport');
+Route::post('/renew-passport/edit/{passport}', 'Website\RenewPassportController@update')->name('website.renew-passport.update');
+Route::post('/renew-passport', 'Website\RenewPassportController@search')->name('website.renew-passport.search');
+
 Route::get('/lost-passport', 'Website\WebsiteController@lostPassport')->name('website.lost-passport');
+
+//Renew Personal Card
 Route::get('/renew-personal-card', 'Website\WebsiteController@renewPersonalCard')->name('website.renew-personal-card');
+Route::post('/renew-personal-card/edit/{invo}', 'Website\RenewPersonalCardController@update')->name('website.renew-personal-card.update');
+Route::post('/renew-personal-card', 'Website\RenewPersonalCardController@search')->name('website.renew-personal-card.search');
+
 Route::get('/lost-personal-card', 'Website\WebsiteController@lostPersonalCard')->name('website.lost-personal-card');
 Route::get('/data', 'Website\WebsiteController@data')->name('website.data');
 

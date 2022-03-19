@@ -16,7 +16,7 @@
 							<h4 class="content-title mb-0 my-auto">تقارير </h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ كل البطاقات القومية</span>
 						</div>
 					</div>
-				
+
 					</div>
 				</div>
 				<!-- breadcrumb -->
@@ -62,10 +62,10 @@
     </div>
 @endif
 
-		
+
 					<div class="col-xl-12">
 						<div class="card mg-b-20">
-						
+
 						<a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal" href="#modaldemo8">اضافة مواطن</a>
 
 							<div class="card-body">
@@ -73,7 +73,7 @@
 									<table id="example" class="table key-buttons text-md-nowrap">
 										<thead>
 											<tr>
-												<th class="border-bottom-0">#</th>							
+												<th class="border-bottom-0">#</th>
 						     					<th class="border-bottom-0">رقم الجواز</th>
 												<th class="border-bottom-0">الاسم بالكامل</th>
 												<th class="border-bottom-0">تاريخ الميلاد</th>
@@ -85,7 +85,7 @@
 												<th class="border-bottom-0">تاريخ الانتهاء</th>
 												<th class="border-bottom-0">المهنة</th>
 												<th class="border-bottom-0">الحالة الاجتماعية</th>
-												<th class="border-bottom-0">النوع</th>	
+												<th class="border-bottom-0">النوع</th>
 												<th class="border-bottom-0"> العمليات</th>
 											</tr>
 										</thead>
@@ -94,7 +94,7 @@
 											@foreach($passport as $x)
 											<?php $i++?>
 											<tr>
-												
+
 												<td>{{$i}}</td>
 												<td>{{$x->passport_no}}</td>
 												<td>{{$x->name}}</td>
@@ -109,33 +109,33 @@
 												<td>{{$x->personal_state}}</td>
 												<td>{{$x->gender}}</td>
                                                        <td></td>
-													   
+
                                                   <td><a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                                data-id="{{ $x->id }}" data-passport_no="{{$x->passport_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}" 
+                                                data-id="{{ $x->id }}" data-passport_no="{{$x->passport_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}"
 												data-adress="{{$x->adress}}" data-blood_type="{{$x->blood_type}}" data-ns_no="{{$x->ns_no}}" data-phone="{{$x->phone}}"
 												 data-gender="{{$x->gender}}" data-date_begin="{{$x->date_begin}}" data-date_end="{{$x->date_end}}"
-                                                data-job="{{$x->job}}"  data-personal_state="{{$x->personal_state}}" data-toggle="modal" 
+                                                data-job="{{$x->job}}"  data-personal_state="{{$x->personal_state}}" data-toggle="modal"
                                                 href="#exampleModal2" title="تعديل"><i class="las la-pen"></i></a>
-											
+
 												<a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
                                                 data-id="{{ $x->id }}" data-name="{{$x->name}}"
                                                 data-toggle="modal" href="#modaldemo9" title="حذف"><i
                                                     class="las la-trash"></i></a>
-											
-											
-											
+
+
+
 											</td>
 
 											<td></td>
 
 											</tr>
 											@endforeach
-										</tbody>	
+										</tbody>
 									</table>
 								</div>
 							</div>
 						</div>
-					
+
 
 
 						<div class="modal" id="modaldemo8">
@@ -201,7 +201,7 @@
                         </div>
 
 
-                        
+
 
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-success">تاكيد</button>
@@ -232,7 +232,7 @@
                     <form action="passport/update" method="post" autocomplete="off">
                         {{ method_field('patch') }}
                         {{ csrf_field() }}
-                       
+
 						<div class="form-group">
 						<input type="hidden" name="id" id="id" value="">
                             <label for="exampleInputEmail1">passport_no </label>
@@ -284,7 +284,7 @@
                             <label for="exampleInputEmail1"> personal_state</label>
                             <input type="text" class="form-control" id="personal_state" name="personal_state">
                         </div>
-                
+
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">تاكيد</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
@@ -326,7 +326,7 @@
 
 	</div>
 	</div>
-	
+
 
 
 
