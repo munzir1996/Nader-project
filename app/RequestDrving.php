@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class RequestDrving extends Model
 {
-    //
+    protected $guarded = [];
 }

@@ -51,7 +51,7 @@ Route::resource('driving', 'DrivLicenseController');
 Route::resource('passport', 'PassportsController');
 Route::resource('serch', 'SerchController');
 
-
+Route::get('/card-Request','RequestCardController@index');
 //Auth::routes();
 Auth::routes();
 
