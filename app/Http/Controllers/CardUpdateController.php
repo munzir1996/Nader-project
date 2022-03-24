@@ -39,16 +39,19 @@ class CardUpdateController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'numeric',
+            'phone' => 'string',
             'personal_state' => 'string',
         ]);
 
+     
+
         RequestCard::create($data);
 
-        session()->flash('Add', 'تم  إرسال الطلب بنجاح ');
+        session()->flash('success', 'تم  إرسال الطلب بنجاح ');
 
         return back();
     }

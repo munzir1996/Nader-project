@@ -15,8 +15,10 @@ class CreateRequestCardsTable extends Migration
     {
         Schema::create('request_cards', function (Blueprint $table) {
             $table->id();
+            $table->integer('card_no');
             $table->string('adress')->nullable();
             $table->string('job')->nullable();
+
             $table->string('personal_state')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();

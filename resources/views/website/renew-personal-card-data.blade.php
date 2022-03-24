@@ -33,14 +33,11 @@
                 {{ session()->get('error') }}
             </p>
         @endif
-        @if (session()->has('Add'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>{{ session()->get('Add') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
+        @if (session()->has('success'))
+            <p style="background-color: green; color: white; text-align:right; padding-right:100px">
+                {{ session()->get('success') }}
+            </p>
+        @endif
 
         <table style="width: 100%;">
             <thead>

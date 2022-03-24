@@ -17,6 +17,7 @@ class CreateRequestDrvingsTable extends Migration
             $table->id();
             $table->string('adress')->nullable();
             $table->string('job')->nullable();
+            $table->integer('driv_no');
             $table->string('personal_state')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();

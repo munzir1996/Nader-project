@@ -100,7 +100,6 @@
                                     <td>{{ $x->adress }}</td>
 
                                     <td>{{ $x->phone }}</td>
-                                    <td>{{ $x->gender }}</td>
 
                                     <td>{{ $x->job }}</td>
                                     <td>{{ $x->personal_state }}</td>
@@ -153,56 +152,25 @@
 
                             <div class="form-group">
 
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">receipt_number</label>
-                                    <input type="number" class="form-control" id="receipt_number" name="receipt_number">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">report_number</label>
-                                    <input type="number" class="form-control" id="report_number" name="report_number">
-                                </div>
+                  
                                 <input type="hidden" name="id" id="id" value="">
                                 <label for="exampleInputEmail1">card_no </label>
                                 <input type="number" class="form-control" id="card_no" name="card_no">
                             </div>
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"> name</label>
-                                <input type="text" class="form-control" id="name" name="name">
-                            </div>
+                       
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"> birthday</label>
-                                <input type="date" class="form-control" id="birthday" name="birthday">
-                            </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> adress</label>
                                 <input type="text" class="form-control" id="adress" name="adress">
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"> blood_type</label>
-                                <input type="text" class="form-control" id="blood_type" name="blood_type">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"> ns_no</label>
-                                <input type="number" class="form-control" id="ns_no" name="ns_no">
-                            </div>
+                         
+                       
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> phone</label>
                                 <input type="number" class="form-control" id="phone" name="phone">
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">gender </label>
-                                <input type="text" class="form-control" id="gender" name="gender">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"> date_begin</label>
-                                <input type="date" class="form-control" id="date_begin" name="date_begin">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"> date_end</label>
-                                <input type="date" class="form-control" id="date_end" name="date_end">
-                            </div>
+                          
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> job</label>
                                 <input type="text" class="form-control" id="job" name="job">
