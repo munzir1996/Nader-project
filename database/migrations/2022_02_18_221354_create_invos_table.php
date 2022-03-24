@@ -15,6 +15,8 @@ class CreateInvosTable extends Migration
     {
         Schema::create('invos', function (Blueprint $table) {
             $table->increments( 'id');
+            $table->integer('receipt_number')->nullable();
+            $table->integer('report_number')->nullable();
             $table->integer('card_no');
             $table->string('name');
             $table->date('birthday');

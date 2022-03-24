@@ -21,13 +21,21 @@
             <a href="#contact">التواصل</a>
         </nav>
 
-
         <a href="#" class="logo">جمهورية السودان</a>
     </header>
 
-
-
     <div class="container">
+        @if (session()->has('error'))
+            <p style="background-color: red; color: white; text-align:right; padding-right:100px">
+                {{ session()->get('error') }}
+            </p>
+        @endif
+        @if (session()->has('success'))
+            <p style="background-color: green; color: white; text-align:right; padding-right:100px">
+                {{ session()->get('success') }}
+            </p>
+        @endif
+
         <table style="width: 100%;">
             <thead>
                 <tr>

@@ -16,7 +16,7 @@
 							<h4 class="content-title mb-0 my-auto">تقارير </h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ كل البطاقات القومية</span>
 						</div>
 					</div>
-				
+
 					</div>
 				</div>
 				<!-- breadcrumb -->
@@ -62,10 +62,10 @@
     </div>
 @endif
 
-		
+
 					<div class="col-xl-12">
 						<div class="card mg-b-20">
-						
+
 						<a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal" href="#modaldemo8">اضافة مواطن</a>
 
 							<div class="card-body">
@@ -73,7 +73,9 @@
 									<table id="example" class="table key-buttons text-md-nowrap">
 										<thead>
 											<tr>
-												<th class="border-bottom-0">#</th>							
+												<th class="border-bottom-0">#</th>
+                                                <th class="border-bottom-0">رقم الأيصال</th>
+                                                <th class="border-bottom-0">رقم البلاغ</th>
 						     					<th class="border-bottom-0">رقم البطاقة</th>
 												<th class="border-bottom-0">الاسم بالكامل</th>
 												<th class="border-bottom-0">تاريخ الميلاد</th>
@@ -86,7 +88,7 @@
 												<th class="border-bottom-0">تاريخ الانتهاء</th>
 												<th class="border-bottom-0">المهنة</th>
 												<th class="border-bottom-0">الحالة الاجتماعية</th>
-												<th class="border-bottom-0">الصورة</th>	
+												<th class="border-bottom-0">الصورة</th>
 												<th class="border-bottom-0"> العمليات</th>
 											</tr>
 										</thead>
@@ -95,8 +97,10 @@
 											@foreach($cardPer as $x)
 											<?php $i++?>
 											<tr>
-												
+
 												<td>{{$i}}</td>
+                                                <td>{{$x->receipt_number ?? 'لم يتم الدفع'}}</td>
+                                                <td>{{$x->report_number ?? 'لا يوجد بلاغ'}}</td>
 												<td>{{$x->card_no}}</td>
 												<td>{{$x->name}}</td>
 												<td>{{$x->birthday}}</td>
@@ -110,33 +114,33 @@
 												<td>{{$x->job}}</td>
 												<td>{{$x->personal_state}}</td>
                                                        <td></td>
-													   
+
                                                   <td><a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                                data-id="{{ $x->id }}" data-card_no="{{$x->card_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}" 
+                                                data-id="{{ $x->id }}" data-card_no="{{$x->card_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}"
 												data-adress="{{$x->adress}}" data-blood_type="{{$x->blood_type}}" data-ns_no="{{$x->ns_no}}" data-phone="{{$x->phone}}"
 												 data-gender="{{$x->gender}}" data-date_begin="{{$x->date_begin}}" data-date_end="{{$x->date_end}}"
-                                                data-job="{{$x->job}}"  data-personal_state="{{$x->personal_state}}" data-toggle="modal" 
+                                                data-job="{{$x->job}}"  data-personal_state="{{$x->personal_state}}" data-toggle="modal"
                                                 href="#exampleModal2" title="تعديل"><i class="las la-pen"></i></a>
-											
+
 												<a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
                                                 data-id="{{ $x->id }}" data-name="{{$x->name}}"
                                                 data-toggle="modal" href="#modaldemo9" title="حذف"><i
                                                     class="las la-trash"></i></a>
-											
-											
-											
+
+
+
 											</td>
 
 											<td></td>
 
 											</tr>
 											@endforeach
-										</tbody>	
+										</tbody>
 									</table>
 								</div>
 							</div>
 						</div>
-					
+
 
 
 						<div class="modal" id="modaldemo8">
@@ -149,6 +153,15 @@
                 <div class="modal-body">
                     <form action="{{ route('cardPer.store') }}" method="post">
                         {{ csrf_field() }}
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">receipt_number</label>
+                            <input type="number" class="form-control" id="receipt_number" name="receipt_number">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">report_number</label>
+                            <input type="number" class="form-control" id="report_number" name="report_number">
+                        </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">card_no </label>
@@ -202,7 +215,7 @@
                         </div>
 
 
-                        
+
 
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-success">تاكيد</button>
@@ -233,8 +246,17 @@
                     <form action="cardPer/update" method="post" autocomplete="off">
                         {{ method_field('patch') }}
                         {{ csrf_field() }}
-                       
+
 						<div class="form-group">
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">receipt_number</label>
+                            <input type="number" class="form-control" id="receipt_number" name="receipt_number">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">report_number</label>
+                            <input type="number" class="form-control" id="report_number" name="report_number">
+                        </div>
 						<input type="hidden" name="id" id="id" value="">
                             <label for="exampleInputEmail1">card_no </label>
                             <input type="text" class="form-control" id="card_no" name="card_no">
@@ -285,7 +307,7 @@
                             <label for="exampleInputEmail1"> personal_state</label>
                             <input type="text" class="form-control" id="personal_state" name="personal_state">
                         </div>
-                
+
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">تاكيد</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
@@ -327,7 +349,7 @@
 
 	</div>
 	</div>
-	
+
 
 
 
@@ -363,6 +385,8 @@
     $('#exampleModal2').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
         var id = button.data('id')
+        var receipt_number = button.data('receipt_number')
+        var report_number = button.data('report_number')
         var card_no = button.data('card_no')
         var name = button.data('name')
 		var birthday = button.data('birthday')
@@ -377,6 +401,8 @@
         var personal_state = button.data('personal_state')
         var modal = $(this)
         modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #receipt_number').val(receipt_number);
+        modal.find('.modal-body #report_number').val(report_number);
         modal.find('.modal-body #card_no').val(card_no);
         modal.find('.modal-body #name').val(name);
 		modal.find('.modal-body #birthday').val(birthday);

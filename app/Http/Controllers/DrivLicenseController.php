@@ -14,7 +14,7 @@ class DrivLicenseController extends Controller
      */
     public function index()
     {
-       
+
         $driving =driv_licens::all();
         return view('pro.driving' , compact('driving'));
     }
@@ -41,6 +41,8 @@ class DrivLicenseController extends Controller
 
 
         driv_licens::create([
+                'receipt_number' => $request->receipt_number,
+                'report_number' => $request->report_number,
                 'driv_no' => $request->driv_no,
                 'name' => $request->name,
                 'birthday' => $request->birthday,
@@ -90,14 +92,15 @@ class DrivLicenseController extends Controller
      */
     public function update(Request $request)
     {
-       
+
         $id = $request->driv_no;
-        
+
 
         $driv_licens = driv_licens::where('driv_no',$id)->first();
 
         $driv_licens->update([
-       
+                'receipt_number' => $request->receipt_number,
+                'report_number' => $request->report_number,
                 'driv_no' => $request->driv_no,
                 'name' => $request->name,
                 'birthday' => $request->birthday,
@@ -110,7 +113,7 @@ class DrivLicenseController extends Controller
                 'date_end' => $request->date_end,
                 'job' => $request->job,
                 'personal_state' => $request->personal_state,
-                
+
         ]);
 
         session()->flash('edit','تم تعديل الرخصه بنجاج');
@@ -129,8 +132,8 @@ class DrivLicenseController extends Controller
         driv_licens::find($id)->delete();
         session()->flash('delete','تم حذف الرخصه بنجاح');
         return redirect('/driving');
-       
-        
-        
+
+
+
     }
 }

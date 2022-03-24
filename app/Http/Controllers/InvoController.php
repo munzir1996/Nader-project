@@ -38,6 +38,8 @@ class InvoController extends Controller
     {
 
         invo::create([
+            'receipt_number' => $request->receipt_number,
+            'report_number' => $request->report_number,
             'card_no' => $request->card_no,
             'name' => $request->name,
             'birthday' => $request->birthday,
@@ -94,6 +96,8 @@ class InvoController extends Controller
         $invo = invo::find($id);
 
         $invo->update([
+            'receipt_number' => $request->receipt_number,
+            'report_number' => $request->report_number,
             'card_no' => $request->card_no,
             'name' => $request->name,
             'birthday' => $request->birthday,
@@ -109,7 +113,7 @@ class InvoController extends Controller
         ]);
 
         session()->flash('edit', 'تم تعديل البطاقه بنجاج');
-        
+
         return redirect('/cardPer');
     }
 

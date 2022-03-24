@@ -21,11 +21,8 @@
             <a href="#contact">التواصل</a>
         </nav>
 
-
         <a href="#" class="logo">جمهورية السودان</a>
     </header>
-
-
 
     <div class="container">
         @if (session()->has('error'))
@@ -59,29 +56,28 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('website.renew-personal-card.update', $invo->id)}}" method="post">
+                <form action="{{route('website.renew-passport.update', $passport->id)}}" method="post">
                     @csrf
                     <tr>
-                        <td>{{$invo->card_no}}</td>
-                        <td>{{$invo->name}}</td>
-                        <td>{{$invo->birthday}}</td>
+                        <td>{{$passport->passport_no}}</td>
+                        <td>{{$passport->name}}</td>
+                        <td>{{$passport->birthday}}</td>
                         <td>
-                            <input type="text" name="adress" value="{{$invo->adress}}" required>
+                            {{$passport->adress}}
                         </td>
-                        <td>{{$invo->blood_type}}</td>
-                        <td>{{$invo->ns_no}}</td>
+                        <td>{{$passport->blood_type}}</td>
+                        <td>{{$passport->ns_no}}</td>
                         <td>
-                            <input type="text" name="phone" value="{{$invo->phone}}" required>
+                            {{$passport->phone}}
                         </td>
-                        <td>{{$invo->gender}}</td>
-                        <td>{{$invo->date_begin}}</td>
-                        <td>{{$invo->date_end}}</td>
+                        <td>{{$passport->gender}}</td>
+                        <td>{{$passport->date_begin}}</td>
+                        <td>{{$passport->date_end}}</td>
                         <td>
-                            <input type="text" name="job" value="{{$invo->job}}" required>
+                            {{$passport->job}}
                         </td>
                         <td>
-                            <input type="text" name="personal_state" value="{{$invo->personal_state}}" required>
-
+                            {{$passport->personal_state}}
                         </td>
                         <td>
                             <button class="bg-primary">تعديل</button>

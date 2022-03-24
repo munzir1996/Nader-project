@@ -76,6 +76,8 @@
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">#</th>
+                                <th class="border-bottom-0">رقم الأيصال</th>
+                                <th class="border-bottom-0">رقم البلاغ</th>
                                 <th class="border-bottom-0">رقم الرخصة</th>
                                 <th class="border-bottom-0">الاسم بالكامل</th>
                                 <th class="border-bottom-0">تاريخ الميلاد</th>
@@ -99,6 +101,8 @@
                                 <tr>
 
                                     <td>{{ $i }}</td>
+                                    <td>{{$x->receipt_number ?? 'لم يتم الدفع'}}</td>
+                                    <td>{{$x->report_number ?? 'لا يوجد بلاغ'}}</td>
                                     <td>{{ $x->driv_no }}</td>
                                     <td>{{ $x->name }}</td>
                                     <td>{{ $x->birthday }}</td>
@@ -155,6 +159,14 @@
                         <form action="{{ route('driving.store') }}" method="post">
                             {{ csrf_field() }}
 
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">receipt_number</label>
+                                <input type="number" class="form-control" id="receipt_number" name="receipt_number">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">report_number</label>
+                                <input type="number" class="form-control" id="report_number" name="report_number">
+                            </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">driv_no </label>
                                 <input type="number" class="form-control" id="driv_no" name="driv_no">
@@ -239,6 +251,14 @@
                             {{ method_field('patch') }}
                             {{ csrf_field() }}
 
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">receipt_number</label>
+                                <input type="number" class="form-control" id="receipt_number" name="receipt_number">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">report_number</label>
+                                <input type="number" class="form-control" id="report_number" name="report_number">
+                            </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">driv_no </label>
                                 <input type="number" class="form-control" id="driv_no" name="driv_no">
@@ -366,6 +386,8 @@
         $('#exampleModal2').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
+            var receipt_number = button.data('receipt_number')
+            var report_number = button.data('report_number')
             var driv_no = button.data('driv_no')
             var name = button.data('name')
             var birthday = button.data('birthday')
@@ -380,6 +402,8 @@
             var personal_state = button.data('personal_state')
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #receipt_number').val(receipt_number);
+            modal.find('.modal-body #report_number').val(report_number);
             modal.find('.modal-body #driv_no').val(driv_no);
             modal.find('.modal-body #name').val(name);
             modal.find('.modal-body #birthday').val(birthday);

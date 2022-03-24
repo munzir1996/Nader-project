@@ -23,14 +23,36 @@ class RenewLicenseController extends Controller
 
     public function update(Request $request, driv_licens $driv_licens)
     {
+        if ($driv_licens->receipt_number == null) {
+            session()->flash('error', 'لم يتم دفع الرسوم');
+            return view('website.renew-license-data', [
+                'driv_licens' => $driv_licens
+            ]);
+        }
+
         $driv_licens->update([
             'adress' => $request->adress,
             'phone' => $request->phone,
             'job' => $request->job,
             'personal_state' => $request->personal_state,
         ]);
-        session()->flash('success', 'تم التعديل بنجاح');
+
+        session()->flash('success', 'تم تعديل البيانات بنجاح');
+
         return view('website.renew-license-data', [
+            'driv_licens' => $driv_licens
+        ]);
+    }
+
+    public function lost(Request $request)
+    {
+        $driv_licens = driv_licens::where('report_number', $request->report_number)->first();
+        if ($driv_licens == null) {
+            session()->flash('error', 'لا يوجد بلاغ');
+            return view('website.error-data');
+        }
+
+        return view('website.lost-license-data', [
             'driv_licens' => $driv_licens
         ]);
     }

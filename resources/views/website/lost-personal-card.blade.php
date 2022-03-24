@@ -26,12 +26,15 @@
 <section class="main">
     <div class="wrap">
         <h3>بدل فاقد البطاقة القومية</h3>
-        <div class="search">
-            <input type="text" class="searchTerm" placeholder="أدخل رقم البطاقة">
-            <button type="submit" class="searchButton">
-                 <i class="fa fa-search"></i>
-              </button>
-        </div>
+        <form action="{{route('website.lost-personal-card.lost')}}" method="post">
+            <div class="search">
+                @csrf
+                <input type="text" class="searchTerm" name="report_number" placeholder="أدخل رقم البلاغ" required>
+                <button class="searchButton">
+                </button>
+                <i class="fa fa-search "></i>
+            </div>
+        </form>
     </div>
 </section>
 

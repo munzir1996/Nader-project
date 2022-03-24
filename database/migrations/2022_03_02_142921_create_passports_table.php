@@ -15,6 +15,8 @@ class CreatePassportsTable extends Migration
     {
         Schema::create('passports', function (Blueprint $table) {
             $table->increments( 'id');
+            $table->integer('receipt_number')->nullable();
+            $table->integer('report_number')->nullable();
             $table->integer('passport_no');
             $table->string('name');
             $table->date('birthday');

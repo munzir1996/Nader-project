@@ -14,6 +14,8 @@ class PassportsController extends Controller
      */
     public function index()
     {
+        // session()->flash('success', 'تم تعديل بيانات الأتفاقية السرية');
+
         $passport = passport::all();
         return view('pro.passport', compact('passport'));
     }
@@ -37,6 +39,8 @@ class PassportsController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'receipt_number' => 'sometimes',
+            'report_number' => 'sometimes',
             'passport_no' => 'required',
             'name' => 'required',
             'birthday' => 'required',
@@ -52,6 +56,8 @@ class PassportsController extends Controller
         ]);
 
         passport::create([
+            'receipt_number' => $request->receipt_number,
+            'report_number' => $request->report_number,
             'passport_no' => $request->passport_no,
             'name' => $request->name,
             'birthday' => $request->birthday,
@@ -64,9 +70,6 @@ class PassportsController extends Controller
             'date_end' => $request->date_end,
             'job' => $request->job,
             'personal_state' => $request->personal_state,
-
-
-
         ]);
         session()->flash('Add', 'تم اضافة القسم بنجاح ');
         return back();
@@ -111,7 +114,8 @@ class PassportsController extends Controller
 
         $passport = passport::find($id);
         $passport->update([
-
+            'receipt_number' => $request->receipt_number,
+            'report_number' => $request->report_number,
             'passport_no' => $request->passport_no,
             'name' => $request->name,
             'birthday' => $request->birthday,

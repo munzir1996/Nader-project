@@ -25,9 +25,8 @@
         <a href="#" class="logo">جمهورية السودان</a>
     </header>
 
-
-
     <div class="container">
+
         @if (session()->has('error'))
             <p style="background-color: red; color: white; text-align:right; padding-right:100px">
                 {{ session()->get('error') }}
@@ -59,29 +58,28 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('website.renew-personal-card.update', $invo->id)}}" method="post">
+                <form action="{{route('website.renew-license.update', $driv_licens->id)}}" method="post">
                     @csrf
                     <tr>
-                        <td>{{$invo->card_no}}</td>
-                        <td>{{$invo->name}}</td>
-                        <td>{{$invo->birthday}}</td>
+                        <td>{{$driv_licens->driv_no}}</td>
+                        <td>{{$driv_licens->name}}</td>
+                        <td>{{$driv_licens->birthday}}</td>
                         <td>
-                            <input type="text" name="adress" value="{{$invo->adress}}" required>
+                            {{$driv_licens->adress}}
                         </td>
-                        <td>{{$invo->blood_type}}</td>
-                        <td>{{$invo->ns_no}}</td>
+                        <td>{{$driv_licens->blood_type}}</td>
+                        <td>{{$driv_licens->ns_no}}</td>
                         <td>
-                            <input type="text" name="phone" value="{{$invo->phone}}" required>
+                            {{$driv_licens->phone}}
                         </td>
-                        <td>{{$invo->gender}}</td>
-                        <td>{{$invo->date_begin}}</td>
-                        <td>{{$invo->date_end}}</td>
+                        <td>{{$driv_licens->gender}}</td>
+                        <td>{{$driv_licens->date_begin}}</td>
+                        <td>{{$driv_licens->date_end}}</td>
                         <td>
-                            <input type="text" name="job" value="{{$invo->job}}" required>
+                            {{$driv_licens->job}}
                         </td>
                         <td>
-                            <input type="text" name="personal_state" value="{{$invo->personal_state}}" required>
-
+                            {{$driv_licens->personal_state}}
                         </td>
                         <td>
                             <button class="bg-primary">تعديل</button>

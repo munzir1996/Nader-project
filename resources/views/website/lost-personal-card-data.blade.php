@@ -66,22 +66,21 @@
                         <td>{{$invo->name}}</td>
                         <td>{{$invo->birthday}}</td>
                         <td>
-                            <input type="text" name="adress" value="{{$invo->adress}}" required>
+                            {{$invo->adress}}
                         </td>
                         <td>{{$invo->blood_type}}</td>
                         <td>{{$invo->ns_no}}</td>
                         <td>
-                            <input type="text" name="phone" value="{{$invo->phone}}" required>
+                            {{$invo->phone}}
                         </td>
                         <td>{{$invo->gender}}</td>
                         <td>{{$invo->date_begin}}</td>
                         <td>{{$invo->date_end}}</td>
                         <td>
-                            <input type="text" name="job" value="{{$invo->job}}" required>
+                            {{$invo->job}}
                         </td>
                         <td>
-                            <input type="text" name="personal_state" value="{{$invo->personal_state}}" required>
-
+                            {{$invo->personal_state}}
                         </td>
                         <td>
                             <button class="bg-primary">تعديل</button>

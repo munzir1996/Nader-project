@@ -15,6 +15,8 @@ class CreateDrivLicensTable extends Migration
     {
         Schema::create('driv_licens', function (Blueprint $table) {
             $table->increments( 'id');
+            $table->integer('receipt_number')->nullable();
+            $table->integer('report_number')->nullable();
             $table->integer('driv_no');
             $table->string('name');
             $table->date('birthday');

@@ -24,6 +24,7 @@ Route::post('/renew-license/edit/{driv_licens}', 'Website\RenewLicenseController
 Route::post('/renew-license', 'Website\RenewLicenseController@search')->name('website.renew-license.search');
 
 Route::get('/lost-license', 'Website\WebsiteController@lostLicense')->name('website.lost-license');
+Route::post('/lost-license', 'Website\RenewLicenseController@lost')->name('website.lost-license.lost');
 
 // Renew Passport
 Route::get('/renew-passport', 'Website\WebsiteController@renewPassport')->name('website.renew-passport');
@@ -31,6 +32,7 @@ Route::post('/renew-passport/edit/{passport}', 'Website\RenewPassportController@
 Route::post('/renew-passport', 'Website\RenewPassportController@search')->name('website.renew-passport.search');
 
 Route::get('/lost-passport', 'Website\WebsiteController@lostPassport')->name('website.lost-passport');
+Route::post('/lost-passport', 'Website\RenewPassportController@lost')->name('website.lost-passport.lost');
 
 //Renew Personal Card
 Route::get('/renew-personal-card', 'Website\WebsiteController@renewPersonalCard')->name('website.renew-personal-card');
@@ -38,6 +40,9 @@ Route::post('/renew-personal-card/edit/{invo}', 'Website\RenewPersonalCardContro
 Route::post('/renew-personal-card', 'Website\RenewPersonalCardController@search')->name('website.renew-personal-card.search');
 
 Route::get('/lost-personal-card', 'Website\WebsiteController@lostPersonalCard')->name('website.lost-personal-card');
+Route::post('/lost-personal-card', 'Website\RenewPersonalCardController@lost')->name('website.lost-personal-card.lost');
+
+
 Route::get('/data', 'Website\WebsiteController@data')->name('website.data');
 
 
