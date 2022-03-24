@@ -108,11 +108,7 @@ class PassportsController extends Controller
     {
 
 
-
-        $id = $request->id;
-
-
-        $passport = passport::find($id);
+        $passport = passport::find($request->id);
         $passport->update([
             'receipt_number' => $request->receipt_number,
             'report_number' => $request->report_number,

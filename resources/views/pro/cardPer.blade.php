@@ -116,7 +116,7 @@
                                                        <td></td>
 
                                                   <td><a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                                data-id="{{ $x->id }}" data-card_no="{{$x->card_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}"
+                                                data-id="{{ $x->id }}" data-report_number="{{$x->report_number}}"  data-receipt_number="{{$x->receipt_number}}" data-card_no="{{$x->card_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}"
 												data-adress="{{$x->adress}}" data-blood_type="{{$x->blood_type}}" data-ns_no="{{$x->ns_no}}" data-phone="{{$x->phone}}"
 												 data-gender="{{$x->gender}}" data-date_begin="{{$x->date_begin}}" data-date_end="{{$x->date_end}}"
                                                 data-job="{{$x->job}}"  data-personal_state="{{$x->personal_state}}" data-toggle="modal"
@@ -259,7 +259,7 @@
                         </div>
 						<input type="hidden" name="id" id="id" value="">
                             <label for="exampleInputEmail1">card_no </label>
-                            <input type="text" class="form-control" id="card_no" name="card_no">
+                            <input type="number" class="form-control" id="card_no" name="card_no">
                         </div>
 
 						<div class="form-group">
@@ -269,7 +269,7 @@
 
 						<div class="form-group">
                             <label for="exampleInputEmail1"> birthday</label>
-                            <input type="num" class="form-control" id="birthday" name="birthday">
+                            <input type="date" class="form-control" id="birthday" name="birthday">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> adress</label>
@@ -281,11 +281,11 @@
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> ns_no</label>
-                            <input type="text" class="form-control" id="ns_no" name="ns_no">
+                            <input type="number" class="form-control" id="ns_no" name="ns_no">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone">
+                            <input type="number" class="form-control" id="phone" name="phone">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1">gender </label>
@@ -293,11 +293,11 @@
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> date_begin</label>
-                            <input type="data" class="form-control" id="date_begin" name="date_begin">
+                            <input type="date" class="form-control" id="date_begin" name="date_begin">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> date_end</label>
-                            <input type="data" class="form-control" id="date_end" name="date_end">
+                            <input type="date" class="form-control" id="date_end" name="date_end">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> job</label>

@@ -14,7 +14,7 @@
 <header>
 
     <nav class="navigation">
-        <a href="{{route('websiteindex')}}">الرئيسية</a>
+        <a href="{{route('website.index')}}">الرئيسية</a>
         <a href="#projects"> مراكز خدمات الجمهور</a>
         <a href="#contact">التواصل</a>
     </nav>

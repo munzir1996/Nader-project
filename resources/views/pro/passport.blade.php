@@ -66,7 +66,7 @@
 					<div class="col-xl-12">
 						<div class="card mg-b-20">
 
-						<a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal" href="#modaldemo8">اضافة مواطن</a>
+						<a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal" href="#modaldemo8">اضافة جواز</a>
 
 							<div class="card-body">
 								<div class="table-responsive">
@@ -115,7 +115,7 @@
                                                        <td></td>
 
                                                   <td><a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                                data-id="{{ $x->id }}" data-passport_no="{{$x->passport_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}"
+                                                data-id="{{ $x->id }}"data-report_number="{{$x->report_number}}"  data-receipt_number="{{$x->receipt_number}}" data-passport_no="{{$x->passport_no}}" data-name="{{$x->name}}" data-birthday="{{$x->birthday}}"
 												data-adress="{{$x->adress}}" data-blood_type="{{$x->blood_type}}" data-ns_no="{{$x->ns_no}}" data-phone="{{$x->phone}}"
 												 data-gender="{{$x->gender}}" data-date_begin="{{$x->date_begin}}" data-date_end="{{$x->date_end}}"
                                                 data-job="{{$x->job}}"  data-personal_state="{{$x->personal_state}}" data-toggle="modal"
@@ -146,7 +146,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title">اضافة قسم</h6><button aria-label="Close" class="close" data-dismiss="modal"
+                    <h6 class="modal-title">اضافة جواز</h6><button aria-label="Close" class="close" data-dismiss="modal"
                         type="button"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -229,13 +229,12 @@
 
 
 
- <!-- edit -->
- <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">تعديل القسم</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">تعديل الجواز</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -245,6 +244,8 @@
                     <form action="passport/update" method="post" autocomplete="off">
                         {{ method_field('patch') }}
                         {{ csrf_field() }}
+
+						<div class="form-group">
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">receipt_number</label>
@@ -256,7 +257,7 @@
                         </div>
 						<input type="hidden" name="id" id="id" value="">
                             <label for="exampleInputEmail1">passport_no </label>
-                            <input type="text" class="form-control" id="passport_no" name="passport_no">
+                            <input type="number" class="form-control" id="passport_no" name="passport_no">
                         </div>
 
 						<div class="form-group">
@@ -266,7 +267,7 @@
 
 						<div class="form-group">
                             <label for="exampleInputEmail1"> birthday</label>
-                            <input type="num" class="form-control" id="birthday" name="birthday">
+                            <input type="date" class="form-control" id="birthday" name="birthday">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> adress</label>
@@ -278,11 +279,11 @@
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> ns_no</label>
-                            <input type="text" class="form-control" id="ns_no" name="ns_no">
+                            <input type="number" class="form-control" id="ns_no" name="ns_no">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone">
+                            <input type="number" class="form-control" id="phone" name="phone">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1">gender </label>
@@ -290,11 +291,11 @@
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> date_begin</label>
-                            <input type="data" class="form-control" id="date_begin" name="date_begin">
+                            <input type="date" class="form-control" id="date_begin" name="date_begin">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> date_end</label>
-                            <input type="data" class="form-control" id="date_end" name="date_end">
+                            <input type="date" class="form-control" id="date_end" name="date_end">
                         </div>
 						<div class="form-group">
                             <label for="exampleInputEmail1"> job</label>
@@ -323,7 +324,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title">حذف القسم</h6><button aria-label="Close" class="close" data-dismiss="modal"
+                    <h6 class="modal-title">حذف الجواز</h6><button aria-label="Close" class="close" data-dismiss="modal"
                         type="button"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <form action="passport/destroy" method="post">

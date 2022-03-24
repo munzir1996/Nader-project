@@ -68,7 +68,7 @@
         <div class="card mg-b-20">
 
             <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal"
-                href="#modaldemo8">اضافة مواطن</a>
+                href="#modaldemo8">اضافة رخصة</a>
 
             <div class="card-body">
                 <div class="table-responsive">
@@ -118,12 +118,15 @@
                                     <td></td>
 
                                     <td><a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                            data-id="{{ $x->id }}" data-driv_no="{{ $x->driv_no }}"
+                                                data-number="{{ $x->id }}" 
+                                            data-report_number="{{$x->report_number}}" 
+                                          data-receipt_number="{{$x->receipt_number}}"
                                             data-name="{{ $x->name }}" data-birthday="{{ $x->birthday }}"
                                             data-adress="{{ $x->adress }}" data-blood_type="{{ $x->blood_type }}"
                                             data-ns_no="{{ $x->ns_no }}" data-phone="{{ $x->phone }}"
                                             data-gender="{{ $x->gender }}" data-date_begin="{{ $x->date_begin }}"
                                             data-date_end="{{ $x->date_end }}" data-job="{{ $x->job }}"
+                                            data-driv_no="{{ $x->driv_no }}"
                                             data-personal_state="{{ $x->personal_state }}" data-toggle="modal"
                                             href="#exampleModal2" title="تعديل"><i class="las la-pen"></i></a>
 
@@ -327,7 +330,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content modal-content-demo">
                     <div class="modal-header">
-                        <h6 class="modal-title">حذف القسم</h6><button aria-label="Close" class="close"
+                        <h6 class="modal-title">حذف الرخصة</h6><button aria-label="Close" class="close"
                             data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <form action="driving/destroy" method="post">
