@@ -58,7 +58,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('website.renew-license.update', $driv_licens->id)}}" method="post">
+                <form action="{{route('.update', $driv_licens->id)}}" method="post">
                     @csrf
                     <tr>
                         <td>{{$driv_licens->driv_no}}</td>
@@ -83,7 +83,7 @@
 
                         </td>
                         <td>
-                            <button class="bg-primary">تعديل</button>
+                            <button class="bg-primary">إرسال طلب تعديل</button>
                         </td>
                     </tr>
                 </form>
