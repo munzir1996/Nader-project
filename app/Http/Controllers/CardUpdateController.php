@@ -42,13 +42,13 @@ class CardUpdateController extends Controller
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'numaric',
+            'phone' => 'numeric',
             'personal_state' => 'string',
         ]);
 
         RequestCard::create($data);
 
-        session()->flash('Add', 'تم   إرسال الطلب بنجاح ');
+        session()->flash('Add', 'تم  إرسال الطلب بنجاح ');
 
         return back();
     }
@@ -87,14 +87,14 @@ class CardUpdateController extends Controller
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'numaric',
+            'phone' => 'numeric',
             'personal_state' => 'string',
         ]);
         $card = invo::find($request->id);
 
         $card->update($data);
 
-        session()->flash('Add', 'تم تعديل بيانات البطاقه بنجاح');
+        session()->flash('success', 'تم تعديل بيانات البطاقه بنجاح');
 
         return back();
     }

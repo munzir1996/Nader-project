@@ -39,7 +39,7 @@ class DrivingUpdateController extends Controller
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'numaric',
+            'phone' => 'numeric',
             'personal_state' => 'string',
         ]);
 
@@ -84,7 +84,7 @@ class DrivingUpdateController extends Controller
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'numaric',
+            'phone' => 'numeric',
             'personal_state' => 'string',
         ]);
         $dirver = driv_licens::find($request->id);

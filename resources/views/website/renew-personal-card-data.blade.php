@@ -33,11 +33,14 @@
                 {{ session()->get('error') }}
             </p>
         @endif
-        @if (session()->has('success'))
-            <p style="background-color: green; color: white; text-align:right; padding-right:100px">
-                {{ session()->get('success') }}
-            </p>
-        @endif
+        @if (session()->has('Add'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session()->get('Add') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
 
         <table style="width: 100%;">
             <thead>
@@ -59,7 +62,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('website.renew-personal-card.update', $invo->id)}}" method="post">
+                <form action="{{route('cardUpdate.store')}}" method="post">
                     @csrf
                     <tr>
                         <td>{{$invo->card_no}}</td>
@@ -84,7 +87,7 @@
 
                         </td>
                         <td>
-                            <button class="bg-primary">تعديل</button>
+                            <button class="bg-primary">إرسال طلب التعديل </button>
                         </td>
                     </tr>
                 </form>

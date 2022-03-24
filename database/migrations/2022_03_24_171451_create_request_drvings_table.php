@@ -15,10 +15,10 @@ class CreateRequestDrvingsTable extends Migration
     {
         Schema::create('request_drvings', function (Blueprint $table) {
             $table->id();
-            $table->string('adress');
-            $table->string('job');
-            $table->string('personal_state');
-            $table->string('photo')->nullable();
+            $table->string('adress')->nullable();
+            $table->string('job')->nullable();
+            $table->string('personal_state')->nullable();
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }

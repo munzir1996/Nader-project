@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRequestLincesTable extends Migration
+class CreateRequestCardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateRequestLincesTable extends Migration
      */
     public function up()
     {
-        Schema::create('request_linces', function (Blueprint $table) {
+        Schema::create('request_cards', function (Blueprint $table) {
             $table->id();
-            $table->string('adress');
-            $table->string('job');
-            $table->string('personal_state');
-            $table->string('photo')->nullable();
+            $table->string('adress')->nullable();
+            $table->string('job')->nullable();
+            $table->string('personal_state')->nullable();
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateRequestLincesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request_linces');
+        Schema::dropIfExists('request_cards');
     }
 }
