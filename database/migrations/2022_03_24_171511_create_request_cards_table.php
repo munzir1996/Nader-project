@@ -18,7 +18,7 @@ class CreateRequestCardsTable extends Migration
             $table->integer('card_no');
             $table->string('adress')->nullable();
             $table->string('job')->nullable();
-
+            $table->boolean('status')->default(0);
             $table->string('personal_state')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();

@@ -79,6 +79,7 @@
                         <td>
                             <input type="text" name="job" value="{{$invo->job}}" required>
                         </td>
+                        <input type="hidden" name="card_no" id="" value="{{$invo->card_no}}">
                         <td>
                             <input type="text" name="personal_state" value="{{$invo->personal_state}}" required>
 

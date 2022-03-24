@@ -39,12 +39,13 @@ class CardUpdateController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+     
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
             'phone' => 'string',
             'personal_state' => 'string',
+            'card_no'=>'required',
         ]);
 
      
@@ -87,13 +88,17 @@ class CardUpdateController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+     
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
             'phone' => 'numeric',
             'personal_state' => 'string',
+            'card_no'=>'required',
         ]);
-        $card = invo::find($request->id);
+        $card = invo::where('card_no',$request->card_no)->first();
+   
 
         $card->update($data);
 

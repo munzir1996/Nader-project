@@ -77,7 +77,8 @@
                             <tr>
                                 <th class="border-bottom-0">#</th>
 
-
+                                <th class="border-bottom-0">رقم البطاقه</th>
+                                
                                 <th class="border-bottom-0">العنوان</th>
 
                                 <th class="border-bottom-0">رقم التلفون</th>
@@ -96,18 +97,18 @@
 
                                     <td>{{ $i }}</td>
 
-
+                                    <td>{{$x->card_no}}</td>
                                     <td>{{ $x->adress }}</td>
 
                                     <td>{{ $x->phone }}</td>
 
                                     <td>{{ $x->job }}</td>
                                     <td>{{ $x->personal_state }}</td>
-                                    <td></td>
+                                    
 
                                     <td><a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                            data-id="{{ $x->id }}" data-adress="{{ $x->adress }}"
-                                            data-phone="{{ $x->phone }}" data-job="{{ $x->job }}"
+                                            data-id="{{ $x->id }}" data-card_no="{{$x->card_no}}" data-adress="{{ $x->adress }}"
+                                            data-phone="{{$x->phone}}" data-job="{{ $x->job }}"
                                             data-personal_state="{{ $x->personal_state }}" data-toggle="modal"
                                             href="#exampleModal2" title="تعديل"><i class="las la-pen"></i></a>
 
@@ -146,7 +147,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="cardPer/update" method="post" autocomplete="off">
+                        <form action="{{route('cardUpdate.update',$x->id)}}" method="post" autocomplete="off">
                             {{ method_field('patch') }}
                             {{ csrf_field() }}
 
@@ -257,6 +258,7 @@
         $('#exampleModal2').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
+            var card_no=button.data('card_no')
             var adress = button.data('adress')
             var phone = button.data('phone')
 
@@ -264,6 +266,8 @@
             var personal_state = button.data('personal_state')
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #card_no').val(card_no);
+
             modal.find('.modal-body #adress').val(adress);
 
             modal.find('.modal-body #phone').val(phone);
