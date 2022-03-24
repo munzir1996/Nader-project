@@ -93,10 +93,9 @@ class DrivLicenseController extends Controller
     public function update(Request $request)
     {
 
-        // dd($request->all());
-        $id = $request->driv_no;
+   
 
-        $driv_licens = driv_licens::where('driv_no', $id)->get();
+        $driv_licens = driv_licens::find($request->id);
 
         $driv_licens->update([
             'receipt_number' => $request->receipt_number,
@@ -128,7 +127,7 @@ class DrivLicenseController extends Controller
      */
     public function destroy(Request $request)
     {
-        dd($request->all());
+      
         driv_licens::find($request->id)->delete();
         
         session()->flash('delete', 'تم حذف الرخصه بنجاح');
