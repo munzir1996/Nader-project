@@ -30,7 +30,7 @@
         <div>
             <h2>جمهورية السودان<br><span>الإدارة العامة للسجل المدني</span></h2>
             <h3>وزارة الداخلية</h3>
-            <a href="#sign" class="main-btn">التسجيل</a>
+            {{-- <a href="#sign" class="main-btn">التسجيل</a> --}}
             <div class="social-icons">
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -159,7 +159,7 @@
     </section>
 
 
-    <section class="sign" id="sign">
+    {{-- <section class="sign" id="sign">
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="form">
@@ -191,7 +191,7 @@
                     </div>
         </form>
 
-    </section>
+    </section> --}}
 
     <footer class="footer">
         <p class="footer-title">Copyrights @ <span>Nader Elshikh Elmangory</span></p>
