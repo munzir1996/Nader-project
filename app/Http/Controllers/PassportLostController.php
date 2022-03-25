@@ -38,6 +38,7 @@ class PassportLostController extends Controller
      */
     public function store(Request $request)
     {
+      
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',

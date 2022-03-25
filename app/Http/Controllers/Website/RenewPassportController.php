@@ -50,7 +50,7 @@ class RenewPassportController extends Controller
             return view('website.error-data');
         }
 
-        return view('website.lost-license-data', [
+        return view('website.lost-passport-data', [
             'passport' => $passport
         ]);
     }

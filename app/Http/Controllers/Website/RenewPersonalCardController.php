@@ -49,8 +49,8 @@ class RenewPersonalCardController extends Controller
             session()->flash('error', 'لا يوجد بلاغ');
             return view('website.error-data');
         }
-
-        return view('website.lost-license-data', [
+        // dd($invo);
+        return view('website.lost-personal-card-data', [
             'invo' => $invo
         ]);
     }

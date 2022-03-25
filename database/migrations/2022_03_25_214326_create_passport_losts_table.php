@@ -21,6 +21,7 @@ class CreatePassportLostsTable extends Migration
             $table->boolean('status')->default(0);
             $table->string('personal_state')->nullable();
             $table->string('phone')->nullable();
+            $table->timestamps();
         });
     }
 

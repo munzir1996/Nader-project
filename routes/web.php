@@ -57,7 +57,7 @@ Route::resource('passportUpdate', 'PassportUpdateController');
 Route::resource('drivingUpdate', 'DrivingUpdateController');
 
 Route::resource('passportLost', 'PassportLostController');
-Route::resource('cardtLost', 'CardLostController');
+Route::resource('cardLost', 'CardLostController');
 Route::resource('driverLost', 'DriverLostController');
 
 
