@@ -77,7 +77,7 @@
                             <tr>
                                 <th class="border-bottom-0">#</th>
 
-                                <th class="border-bottom-0">رقم  الجواز</th>
+                                <th class="border-bottom-0">رقم الجواز</th>
 
                                 <th class="border-bottom-0">العنوان</th>
 
@@ -114,9 +114,9 @@
                                             href="#exampleModal2" title="تعديل"><i class="las la-pen"></i></a>
 
                                         {{-- <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                            data-id="{{ $x->id }}" data-name="{{ $x->name }}"
-                                            data-toggle="modal" href="#modaldemo9" title="حذف"><i
-                                                class="las la-trash"></i></a> --}}
+                                        data-id="{{ $x->id }}" data-name="{{$x->name}}"
+                                        data-toggle="modal" href="#modaldemo9" title="حذف"><i
+                                            class="las la-trash"></i></a> --}}
 
 
 
@@ -153,9 +153,6 @@
                             {{ csrf_field() }}
 
                             <div class="form-group">
-
-
-                                <input type="hidden" name="id" id="id" value="">
                                 <label for="exampleInputEmail1">passport_no </label>
                                 <input type="number" class="form-control" id="passport_no" name="passport_no">
                             </div>
@@ -168,13 +165,14 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> phone</label>
-                                <input type="number" class="form-control" id="phone" name="phone">
+                                <input type="string" class="form-control" id="phone" name="phone">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> job</label>
                                 <input type="text" class="form-control" id="job" name="job">
                             </div>
+                            <input type="hidden" name="id" id="" value="{{$x->id}}">
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> personal_state</label>
                                 <input type="text" class="form-control" id="personal_state" name="personal_state">
@@ -257,12 +255,13 @@
         $('#exampleModal2').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
-            var card_no = button.data('card_no')
+            var passport_no = button.data('passport_no')
             var adress = button.data('adress')
-            var phone = button.data('phone')
-
+         
             var job = button.data('job')
+            var phone = button.data('phone')
             var personal_state = button.data('personal_state')
+
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
             modal.find('.modal-body #passport_no').val(passport_no);
@@ -276,7 +275,7 @@
         })
     </script>
 
-    <script>
+    {{-- <script>
         $('#modaldemo9').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
@@ -286,5 +285,5 @@
             modal.find('.modal-body #id').val(id);
             modal.find('.modal-body #name').val(name);
         })
-    </script>
+    </script> --}}
 @endsection

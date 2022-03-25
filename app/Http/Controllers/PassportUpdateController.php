@@ -16,6 +16,7 @@ class PassportUpdateController extends Controller
     public function index()
     {
         $passport = RequestPassport::all();
+
         return view('pro.passportUpdate', compact('passport'));
     }
 
@@ -37,11 +38,13 @@ class PassportUpdateController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'numeric',
+            'phone' => 'string',
             'personal_state' => 'string',
+            'passport_no' => 'required',
         ]);
 
         RequestPassport::create($data);
@@ -82,15 +85,18 @@ class PassportUpdateController extends Controller
      */
     public function update(Request $request, $id)
     {
+       
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'numeric',
+            'phone' => 'string',
             'personal_state' => 'string',
+            'passport_no' => 'required',
         ]);
-        $dirver = passport::find($request->id);
-
-        $dirver->update($data);
+        
+        $passport = passport::where('passport_no',$request->passport_no)->first();
+      
+        $passport->update($data);
 
         session()->flash('Add', 'تم تعديل بيانات الجواز بنجاح');
 
