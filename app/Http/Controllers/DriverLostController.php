@@ -17,7 +17,7 @@ class DriverLostController extends Controller
     {
         $dirver = DriverLost::all();
 
-        return view('pro.drivingUpdate', compact('dirver'));
+        return view('pro.driverLost', compact('dirver'));
     }
 
     /**
@@ -38,11 +38,11 @@ class DriverLostController extends Controller
      */
     public function store(Request $request)
     {
-        //  dd($request->all());
+    //   dd($request->all());
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'numeric',
+            'phone' => '    numeric',
             'personal_state' => 'string',
             'driv_no' => 'required',
         ]);

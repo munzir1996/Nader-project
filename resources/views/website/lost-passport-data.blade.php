@@ -76,11 +76,17 @@
                         <td>
                             {{$passport->job}}
                         </td>
+                        <input type="hidden" name="passport_no" id="" value="{{$passport->passport_no}}">
+                        <input type="hidden" name="adress" id="" value="{{$passport->adress}}">
+                        <input type="hidden" name="phone" id="" value="{{$passport->phone}}">
+                        <input type="hidden" name="job" id="" value="{{$passport->job}}">
+                        <input type="hidden" name="personal_state" id="" value="{{$passport->personal_state}}">
+
                         <td>
                             {{$passport->personal_state}}
                         </td>
                         <td>
-                            <button class="bg-primary">تعديل</button>
+                            <button class="bg-primary">إرسال طلب </button>
                         </td>
                     </tr>
                 </form>

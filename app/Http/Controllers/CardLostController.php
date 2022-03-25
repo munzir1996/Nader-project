@@ -18,7 +18,7 @@ class CardLostController extends Controller
 
         $cardPer = CardLost::all();
 
-        return view('pro.cardUpdate', compact('cardPer'));
+        return view('pro.cardLost', compact('cardPer'));
     }
 
     /**

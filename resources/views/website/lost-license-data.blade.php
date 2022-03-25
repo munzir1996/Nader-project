@@ -81,8 +81,14 @@
                         <td>
                             {{$driv_licens->personal_state}}
                         </td>
+                        <input type="hidden" name="driv_no" id="" value="{{$driv_licens->driv_no}}">
+                        <input type="hidden" name="adress" id="" value="{{$driv_licens->adress}}">
+                        <input type="hidden" name="phone" id="" value="{{$driv_licens->phone}}">
+                        <input type="hidden" name="job" id="" value="{{$driv_licens->job}}">
+
+                        <input type="hidden" name="personal_state" id="" value="{{$driv_licens->personal_state}}">
                         <td>
-                            <button class="bg-primary">تعديل</button>
+                            <button class="bg-primary">إرسال طلب</button>
                         </td>
                     </tr>
                 </form>

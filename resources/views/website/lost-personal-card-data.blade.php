@@ -79,11 +79,18 @@
                         <td>
                             {{$invo->job}}
                         </td>
+                        <input type="hidden" name="card_no" id="" value="{{$invo->card_no}}">
+                        <input type="hidden" name="adress" id="" value="{{$invo->adress}}">
+                        <input type="hidden" name="phone" id="" value="{{$invo->phone}}">
+                        <input type="hidden" name="job" id="" value="{{$invo->job}}">
+
+                        <input type="hidden" name="personal_state" id="" value="{{$invo->personal_state}}">
+
                         <td>
                             {{$invo->personal_state}}
                         </td>
                         <td>
-                            <button class="bg-primary">تعديل</button>
+                            <button class="bg-primary">إرسال بلاغ</button>
                         </td>
                     </tr>
                 </form>

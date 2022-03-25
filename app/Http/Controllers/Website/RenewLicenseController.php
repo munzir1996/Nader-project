@@ -47,6 +47,7 @@ class RenewLicenseController extends Controller
     public function lost(Request $request)
     {
         $driv_licens = driv_licens::where('report_number', $request->report_number)->first();
+        // dd($driv_licens);
         if ($driv_licens == null) {
             session()->flash('error', 'لا يوجد بلاغ');
             return view('website.error-data');
