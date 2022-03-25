@@ -22,8 +22,8 @@ class CreateDriverLostsTable extends Migration
             $table->string('personal_state')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();
+        });
     }
-}
 
     /**
      * Reverse the migrations.

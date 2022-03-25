@@ -59,7 +59,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('website.renew-personal-card.update', $invo->id)}}" method="post">
+                <form action="{{route('cardLost.store')}}" method="post">
                     @csrf
                     <tr>
                         <td>{{$invo->card_no}}</td>

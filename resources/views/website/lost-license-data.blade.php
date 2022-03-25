@@ -58,7 +58,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('website.renew-license.update', $driv_licens->id)}}" method="post">
+                <form action="{{route('driverLost.store')}}" method="post">
                     @csrf
                     <tr>
                         <td>{{$driv_licens->driv_no}}</td>

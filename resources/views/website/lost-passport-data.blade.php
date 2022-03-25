@@ -56,7 +56,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('website.renew-passport.update', $passport->id)}}" method="post">
+                <form action="{{route('passortLost.store')}}" method="post">
                     @csrf
                     <tr>
                         <td>{{$passport->passport_no}}</td>

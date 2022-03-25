@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', 'Website\WebsiteController@index')->name('website.index');
 Route::get('/personal-card', 'Website\WebsiteController@personalCard')->name('website.personal-card');
 Route::get('/driving-license', 'Website\WebsiteController@drivingLicense')->name('website.driving-license');
@@ -55,24 +56,29 @@ Route::resource('cardUpdate', 'CardUpdateController');
 Route::resource('passportUpdate', 'PassportUpdateController');
 Route::resource('drivingUpdate', 'DrivingUpdateController');
 
+Route::resource('passportLost', 'PassportLostController');
+Route::resource('cardtLost', 'CardLostController');
+
+Route::resource('driverLost', 'DriverLostController');
+
 
 //Auth::routes();
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['auth']], function() {
-    Route::resource('roles','RoleController');
-    Route::resource('users','UserController');
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('roles', 'RoleController');
+    Route::resource('users', 'UserController');
 });
 
 
 Route::get('/{page}', 'AdminController@index');
 
 
-Route::prefix('admin')->group(function() {
-    Route::get('/login','Admin\Auth\LoginController@showLoginForm')->name('admin.show_login');
+Route::prefix('admin')->group(function () {
+    Route::get('/login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.show_login');
     Route::post('/login', 'Admin\Auth\LoginController@login')->name('admin.login');
     Route::get('logout/', 'Admin\Auth\LoginController@logout')->name('admin.logout');
     Route::get('/', 'Admin\AdminController@index')->name('admin.dashboard');
-   }) ;
+});

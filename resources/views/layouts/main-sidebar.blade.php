@@ -40,7 +40,7 @@
 						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3"/><path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg><span class="side-menu__label"> التقديمات</span><i class="angle fe fe-chevron-down"></i></a>
 						<ul class="slide-menu">	
 								
-							<li><a class="slide-item" href="{{ url('/' . $page='chart-flot') }}">بدل فاقد</a></li>
+							<li><a class="slide-item" href="{{ url('/' . $page='cardLost') }}">بدل فاقد</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='cardUpdate') }}">تجديد</a></li>
 						</ul>
 					</li>
@@ -61,7 +61,7 @@
 						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3"/><path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg><span class="side-menu__label"> التقديمات</span><i class="angle fe fe-chevron-down"></i></a>
 						<ul class="slide-menu">		
 									
-							<li><a class="slide-item" href="{{ url('/' . $page='chart-flot') }}">بدل فاقد</a></li>
+							<li><a class="slide-item" href="{{ url('/' . $page='passportLost') }}">بدل فاقد</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='passportUpdate') }}">تجديد</a></li>
 						</ul>
 					</li>
@@ -81,7 +81,7 @@
 						
 						<a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3"/><path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg><span class="side-menu__label"> التقديمات</span><i class="angle fe fe-chevron-down"></i></a>
 						<ul class="slide-menu">	
-							<li><a class="slide-item" href="{{ url('/' . $page='chart-flot') }}">بدل فاقد</a></li>
+							<li><a class="slide-item" href="{{ url('/' . $page='driverLost') }}">بدل فاقد</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='drivingUpdate') }}">تجديد</a></li>
 						</ul>
 					</li>
