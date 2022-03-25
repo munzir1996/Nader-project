@@ -37,7 +37,7 @@ class RenewLicenseController extends Controller
             'personal_state' => $request->personal_state,
         ]);
 
-        session()->flash('success', 'تم تعديل البيانات بنجاح');
+        session()->flash('Add', 'تم تعديل البيانات بنجاح');
 
         return view('website.renew-license-data', [
             'driv_licens' => $driv_licens
