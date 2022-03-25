@@ -9,6 +9,8 @@
 - php artisan key:generate
 - php artisan migrate --seed 
 - php artisan serve
+- email: admin@admin.com
+- password: 12345678
 
 
 
