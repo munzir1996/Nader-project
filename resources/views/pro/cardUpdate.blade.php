@@ -67,8 +67,8 @@
     <div class="col-xl-12">
         <div class="card mg-b-20">
 
-            <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal"
-                href="#modaldemo8">اضافة مواطن</a>
+            {{-- <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale" data-toggle="modal"
+                href="#modaldemo8">اضافة مواطن</a> --}}
 
             <div class="card-body">
                 <div class="table-responsive">

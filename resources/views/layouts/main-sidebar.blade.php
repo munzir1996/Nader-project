@@ -62,7 +62,7 @@
 						<ul class="slide-menu">		
 									
 							<li><a class="slide-item" href="{{ url('/' . $page='chart-flot') }}">بدل فاقد</a></li>
-							<li><a class="slide-item" href="{{ url('/' . $page='chart-chartjs') }}">تجديد</a></li>
+							<li><a class="slide-item" href="{{ url('/' . $page='passportUpdate') }}">تجديد</a></li>
 						</ul>
 					</li>
 				

@@ -89,7 +89,6 @@ class CardUpdateController extends Controller
     public function update(Request $request, $id)
     {
 
-     
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
@@ -97,9 +96,9 @@ class CardUpdateController extends Controller
             'personal_state' => 'string',
             'card_no'=>'required',
         ]);
+
         $card = invo::where('card_no',$request->card_no)->first();
    
-
         $card->update($data);
 
         session()->flash('success', 'تم تعديل بيانات البطاقه بنجاح');

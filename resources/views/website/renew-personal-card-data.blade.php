@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="{{asset('vendor/js/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('vendor/js/style.css') }}">
     <script src="https://kit.fontawesome.com/28d75e6f70.js" crossorigin="anonymous"></script>
     <title>Passport</title>
 </head>
@@ -16,7 +16,7 @@
     <header>
 
         <nav class="navigation">
-            <a href="{{route('website.index')}}">الرئيسية</a>
+            <a href="{{ route('website.index') }}">الرئيسية</a>
             <a href="#projects"> مراكز خدمات الجمهور</a>
             <a href="#contact">التواصل</a>
         </nav>
@@ -59,29 +59,33 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('cardUpdate.store')}}" method="post">
+                <form action="{{ route('cardUpdate.store') }}" method="post">
                     @csrf
                     <tr>
-                        <td>{{$invo->card_no}}</td>
-                        <td>{{$invo->name}}</td>
-                        <td>{{$invo->birthday}}</td>
+                        <td>{{ $invo->card_no }}</td>
+                        <td>{{ $invo->name }}</td>
+                        <td>{{ $invo->birthday }}</td>
+
                         <td>
-                            <input type="text" name="adress" value="{{$invo->adress}}" required>
+                            <input type="text" name="adress" value="{{ $invo->adress }}" required>
                         </td>
-                        <td>{{$invo->blood_type}}</td>
-                        <td>{{$invo->ns_no}}</td>
+
+                        <td>{{ $invo->blood_type }}</td>
+                        <td>{{ $invo->ns_no }}</td>
+
                         <td>
-                            <input type="text" name="phone" value="{{$invo->phone}}" required>
+                            <input type="text" name="phone" value="{{ $invo->phone }}" required>
                         </td>
-                        <td>{{$invo->gender}}</td>
-                        <td>{{$invo->date_begin}}</td>
-                        <td>{{$invo->date_end}}</td>
+
+                        <td>{{ $invo->gender }}</td>
+                        <td>{{ $invo->date_begin }}</td>
+                        <td>{{ $invo->date_end }}</td>
                         <td>
-                            <input type="text" name="job" value="{{$invo->job}}" required>
+                            <input type="text" name="job" value="{{ $invo->job }}" required>
                         </td>
-                        <input type="hidden" name="card_no" id="" value="{{$invo->card_no}}">
+                        <input type="hidden" name="card_no" id="" value="{{ $invo->card_no }}">
                         <td>
-                            <input type="text" name="personal_state" value="{{$invo->personal_state}}" required>
+                            <input type="text" name="personal_state" value="{{ $invo->personal_state }}" required>
 
                         </td>
                         <td>

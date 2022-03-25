@@ -15,7 +15,8 @@ class PassportUpdateController extends Controller
      */
     public function index()
     {
-        //
+        $passport = RequestPassport::all();
+        return view('pro.passportUpdate', compact('passport'));
     }
 
     /**
@@ -47,7 +48,7 @@ class PassportUpdateController extends Controller
 
         session()->flash('Add', 'تم   إرسال الطلب بنجاح ');
 
-        return back();  
+        return back();
     }
 
     /**
@@ -91,7 +92,7 @@ class PassportUpdateController extends Controller
 
         $dirver->update($data);
 
-        session()->flash('Add', 'تم تعديل بيانات الرخصة بنجاح');
+        session()->flash('Add', 'تم تعديل بيانات الجواز بنجاح');
 
         return back();
     }

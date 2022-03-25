@@ -39,7 +39,7 @@
         <table style="width: 100%;">
             <thead>
                 <tr>
-                    <th>رقم البطاقة</th>
+                    <th>رقم الجواز</th>
                     <th>الاسم بالكامل</th>
                     <th>تاريخ الميلاد</th>
                     <th>العنوان</th>
@@ -56,7 +56,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('website.renew-passport.update', $passport->id)}}" method="post">
+                <form action="{{route('passportUpdate.store')}}" method="post">
                     @csrf
                     <tr>
                         <td>{{$passport->passport_no}}</td>
