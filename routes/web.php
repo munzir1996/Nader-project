@@ -53,6 +53,8 @@ Route::resource('serch', 'SerchController');
 
 Route::resource('cardUpdate', 'CardUpdateController');
 Route::resource('passportUpdate', 'PassportUpdateController');
+Route::resource('drivingUpdate', 'DrivingUpdateController');
+
 
 //Auth::routes();
 Auth::routes();

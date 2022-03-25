@@ -39,16 +39,16 @@ class CardUpdateController extends Controller
      */
     public function store(Request $request)
     {
-     
+
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'string',
+            'phone' => 'numeric',
             'personal_state' => 'string',
-            'card_no'=>'required',
+            'card_no' => 'required',
         ]);
 
-     
+
 
         RequestCard::create($data);
 
@@ -94,14 +94,19 @@ class CardUpdateController extends Controller
             'adress' => 'string',
             'phone' => 'numeric',
             'personal_state' => 'string',
-            'card_no'=>'required',
+            'card_no' => 'required',
         ]);
 
-        $card = invo::where('card_no',$request->card_no)->first();
-   
+
+        $card = invo::where('card_no', $request->card_no)->first();
+
         $card->update($data);
 
-        session()->flash('success', 'تم تعديل بيانات البطاقه بنجاح');
+        $re = RequestCard::where('card_no', $request->card_no)->first();
+
+        $re->update(['status' => 1]);
+        
+        session()->flash('Add', 'تم تعديل بيانات البطاقه بنجاح');
 
         return back();
     }

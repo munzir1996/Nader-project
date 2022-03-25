@@ -106,12 +106,13 @@
                                     <td>{{ $x->personal_state }}</td>
 
 
-                                    <td><a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
+                                    <td><button class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
                                             data-id="{{ $x->id }}" data-passport_no="{{ $x->passport_no }}"
                                             data-adress="{{ $x->adress }}" data-phone="{{ $x->phone }}"
                                             data-job="{{ $x->job }}"
                                             data-personal_state="{{ $x->personal_state }}" data-toggle="modal"
-                                            href="#exampleModal2" title="تعديل"><i class="las la-pen"></i></a>
+                                            href="#exampleModal2" title="تعديل"
+                                             {{$x->status == 1 ? 'disabled' :''}}><i class="las la-pen"></i></button>
 
                                         {{-- <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
                                         data-id="{{ $x->id }}" data-name="{{$x->name}}"
@@ -119,7 +120,7 @@
                                             class="las la-trash"></i></a> --}}
 
 
-
+                                        
                                     </td>
 
                                     <td></td>
@@ -165,14 +166,14 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> phone</label>
-                                <input type="string" class="form-control" id="phone" name="phone">
+                                <input type="number" class="form-control" id="phone" name="phone">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> job</label>
                                 <input type="text" class="form-control" id="job" name="job">
                             </div>
-                            <input type="hidden" name="id" id="" value="{{$x->id}}">
+                            {{-- <input type="hidden" name="id" id="" value="{{$x->id}}"> --}}
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> personal_state</label>
                                 <input type="text" class="form-control" id="personal_state" name="personal_state">
@@ -257,7 +258,7 @@
             var id = button.data('id')
             var passport_no = button.data('passport_no')
             var adress = button.data('adress')
-         
+
             var job = button.data('job')
             var phone = button.data('phone')
             var personal_state = button.data('personal_state')

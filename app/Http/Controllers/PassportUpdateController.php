@@ -42,7 +42,7 @@ class PassportUpdateController extends Controller
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'string',
+            'phone' => 'numeric',
             'personal_state' => 'string',
             'passport_no' => 'required',
         ]);
@@ -85,19 +85,23 @@ class PassportUpdateController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->all());
        
         $data = $request->validate([
             'job' => 'string',
             'adress' => 'string',
-            'phone' => 'string',
+            'phone' => 'numeric',
             'personal_state' => 'string',
             'passport_no' => 'required',
         ]);
-        
+    
         $passport = passport::where('passport_no',$request->passport_no)->first();
-      
+        //  dd($passport);
         $passport->update($data);
 
+        $re = RequestPassport::where('passport_no', $request->passport_no)->first();
+
+        $re->update(['status' => 1]);
         session()->flash('Add', 'تم تعديل بيانات الجواز بنجاح');
 
         return back();

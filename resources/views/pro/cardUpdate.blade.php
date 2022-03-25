@@ -106,11 +106,11 @@
                                     <td>{{ $x->personal_state }}</td>
                                     
 
-                                    <td><a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
+                                    <td><button class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
                                             data-id="{{ $x->id }}" data-card_no="{{$x->card_no}}" data-adress="{{ $x->adress }}"
                                             data-phone="{{$x->phone}}" data-job="{{ $x->job }}"
                                             data-personal_state="{{ $x->personal_state }}" data-toggle="modal"
-                                            href="#exampleModal2" title="تعديل"><i class="las la-pen"></i></a>
+                                            href="#exampleModal2" title="تعديل"  {{$x->status == 1 ? 'disabled' :''}}><i class="las la-pen"></i></button>
 
                                         {{-- <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
                                             data-id="{{ $x->id }}" data-name="{{ $x->name }}"
@@ -169,7 +169,7 @@
                        
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> phone</label>
-                                <input type="number" class="form-control" id="phone" name="phone">
+                                <input type="text" class="form-control" id="phone" name="phone">
                             </div>
                           
                             <div class="form-group">

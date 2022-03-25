@@ -58,7 +58,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="{{route('.update', $driv_licens->id)}}" method="post">
+                <form action="{{route('drivingUpdate.store')}}" method="post">
                     @csrf
                     <tr>
                         <td>{{$driv_licens->driv_no}}</td>
@@ -70,11 +70,13 @@
                         <td>{{$driv_licens->blood_type}}</td>
                         <td>{{$driv_licens->ns_no}}</td>
                         <td>
-                            <input type="text" name="phone" value="{{$driv_licens->phone}}" required>
+                            <input type="number" name="phone" value="{{$driv_licens->phone}}" required>
                         </td>
                         <td>{{$driv_licens->gender}}</td>
                         <td>{{$driv_licens->date_begin}}</td>
                         <td>{{$driv_licens->date_end}}</td>
+                        <input type="hidden" name="driv_no" id="" value="{{$driv_licens->driv_no}}">
+
                         <td>
                             <input type="text" name="job" value="{{$driv_licens->job}}" required>
                         </td>

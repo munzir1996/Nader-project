@@ -74,7 +74,7 @@
                         <td>{{ $invo->ns_no }}</td>
 
                         <td>
-                            <input type="text" name="phone" value="{{ $invo->phone }}" required>
+                            <input type="number" name="phone" value="{{ $invo->phone }}" required>
                         </td>
 
                         <td>{{ $invo->gender }}</td>
