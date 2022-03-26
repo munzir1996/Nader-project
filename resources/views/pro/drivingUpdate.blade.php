@@ -147,7 +147,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{route('drivingUpdate.update',$x->id)}}" method="post" autocomplete="off">
+                        <form action="{{route('drivingUpdate.update',$x->id??'')}}" method="post" autocomplete="off">
                             {{ method_field('patch') }}
                             {{ csrf_field() }}
 
