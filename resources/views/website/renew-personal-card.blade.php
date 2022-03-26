@@ -41,19 +41,20 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="wrap">
-            <h3>تجديد البطاقة القومية</h3>
-            <form action="{{ route('website.renew-personal-card.search') }}" method="post">
-                <div class="search">
-                    @csrf
-                    <input type="text" class="searchTerm" name="card_no" placeholder="أدخل رقم البطاقة" required>
-                    <button class="searchButton">
+    @endif
+    <div class="wrap">
+        <h3>تجديد البطاقة القومية</h3>
+        <form action="{{ route('website.renew-personal-card.search') }}" method="post">
+            <div class="search">
+                @csrf
+                <input type="text" class="searchTerm" name="card_no" placeholder="أدخل رقم البطاقة" required>
+                <button class="searchButton">
 
-                    </button>
-                    <i class="fa fa-search "></i>
-                </div>
-            </form>
-        </div>
+                </button>
+                <i class="fa fa-search "></i>
+            </div>
+        </form>
+    </div>
 </section>
 
 

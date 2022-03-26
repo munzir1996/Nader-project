@@ -41,6 +41,7 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
+@endif
     <div class="wrap">
         <h3>تجديد جواز السفر</h3>
 
